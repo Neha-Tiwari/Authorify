@@ -140,20 +140,30 @@ export default class ImageUpload extends Component {
               onChange={this.handleAuthorChange}
             />
           </label>
-          &nbsp;&nbsp;
-          <label>
+          {/* &nbsp;&nbsp; */}
+          {/* <label>
             Spine Text:
             <input
               value={this.state.spine}
               name="spine"
               onChange={this.handleSpineChange}
             />
-          </label>
+          </label> */}
         </form>
-        <br />
+        {/* <br /> */}
         <Button onClick={this.handleUpload}>Upload</Button>
-        <br />
-        <svg id="svgTag" viewBox="0 0 331 246">
+        <svg id="svgTag" viewBox="0 0 400 275">
+          {this.state.upload ? (
+            <image
+              // href="user/upload.png"
+              href={this.state.imageUrl}
+              x="35"
+              y="130"
+              width="55"
+              height="55"
+              radius="180"
+            />
+          ) : null}
           <image
             x="20"
             y="0"
@@ -162,17 +172,6 @@ export default class ImageUpload extends Component {
             fill="white"
             href={Cover1}
           />
-          {/* #0F496D */}
-          {/* <rect width="315" height="230" x="8" fill="#121630" />
-          <rect x="160" y="0" width="10" height="230" fill="white" /> */}
-          {/* <circle
-            cx="50"
-            cy="150"
-            r="20"
-            stroke="black"
-            stroke-width="1"
-            fill="yellow"
-          /> */}
           <text
             x="70"
             y="40"
@@ -188,25 +187,14 @@ export default class ImageUpload extends Component {
             <image
               // href="user/upload.png"
               href={this.state.imageUrl}
-              x="25"
-              y="150"
-              width="30"
-              height="40"
-              radius="140"
-              fill="white"
+              x="198"
+              y="113"
+              width="90"
+              height="90"
+              // radius="180"
             />
           ) : null}
           }
-          {/* <rect x="25" y="150" width="30" height="40" fill="white" /> */}
-          {/* <image
-            // href="user/upload.png"
-            href={this.state.imageUrl}
-            x="230"
-            y="70"
-            width="50px"
-            height="30px"
-            radius="140"
-          /> */}
           <text
             x="190"
             y="85"
@@ -227,10 +215,10 @@ export default class ImageUpload extends Component {
             fill="orange"
             class="large"
           >
-            {this.state.author}zcc
+            {this.state.author}
           </text>
         </svg>
-        {this.state.upload ? (
+        {/* {this.state.upload ? (
           <div>
             <CloudinaryContext cloudName="dtt2cdx79">
               <Image publicId={this.state.imageUrl}>
@@ -245,7 +233,7 @@ export default class ImageUpload extends Component {
               </Image>
             </CloudinaryContext>
           </div>
-        ) : null}
+        ) : null} */}
         <Button
           variant="raised"
           className="rounded-btn rounded-btn--squarish"
